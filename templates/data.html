@@ -1,0 +1,12 @@
+<ul>
+{% for key,value in form_data.items() %}
+<li> {{key}}: {{value}} </li>
+{% endfor %}
+</ul>
+
+<h2> Possible answers </h2>
+<ul>
+    {% for word in possible_words %}
+    <li> {{word}} </li>
+    {% endfor %}
+</ul>
