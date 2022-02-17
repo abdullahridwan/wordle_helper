@@ -24,4 +24,4 @@ def data():
         return render_template('data.html',form_data = form_data, possible_words = possible_words)
  
  
-app.run(host='localhost', port=5000)
+# app.run(host='localhost', port=5000)
