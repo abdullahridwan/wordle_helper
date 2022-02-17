@@ -1,1 +1,12 @@
-python -3.9.7
+click==8.0.3
+english-words==1.1.0
+Flask==2.0.3
+gunicorn==20.1.0
+itsdangerous==2.0.1
+Jinja2==3.0.3
+joblib==1.1.0
+MarkupSafe==2.0.1
+nltk==3.7
+regex==2022.1.18
+tqdm==4.62.3
+Werkzeug==2.0.3
