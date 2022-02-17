@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 from screw_wordle import screw_wordle
 import nltk
+
 nltk.download('words')
 
 app = Flask(__name__)

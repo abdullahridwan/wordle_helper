@@ -1,7 +1,7 @@
 from itertools import product
 from nltk.corpus import words
 import string
-from english_words import english_words_set
+# from english_words import english_words_set
 
 def screw_wordle(yellows, greys, greens):
   """
@@ -32,7 +32,7 @@ def screw_wordle(yellows, greys, greens):
         return False    
     if mask(word, greens) == False:
       return False
-    if word not in setofwords or english_words_set:
+    if word not in setofwords :
       return False
     return True
     
