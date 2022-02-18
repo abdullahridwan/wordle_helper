@@ -1,1 +1,1 @@
-web: gunicorn app.app:app --preload
+web: gunicorn --max-workers=10 app.app:app --preload
