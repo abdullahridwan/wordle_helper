@@ -1,6 +1,6 @@
 from itertools import product
 from nltk.corpus import words
-import string
+from string import ascii_lowercase
 # from english_words import english_words_set
 
 def screw_wordle(yellows, greys, greens):
@@ -13,7 +13,7 @@ def screw_wordle(yellows, greys, greens):
   greens = greens.lower()
   setofwords = set(words.words())
 
-  y = [''.join(i) for i in product(string.ascii_lowercase, repeat = 5)]
+  y = [''.join(i) for i in product(ascii_lowercase, repeat = 5)]
 
   # helper function that checks if a 5 letter word fits the [greens] mask
   def mask(word, greens):
