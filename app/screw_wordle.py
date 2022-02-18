@@ -1,9 +1,9 @@
 from itertools import product
-from nltk.corpus import words
+#from nltk.corpus import words
 from string import ascii_lowercase
 # from english_words import english_words_set
 
-def screw_wordle(yellows, greys, greens):
+def screw_wordle(yellows, greys, greens, all_allowed_content, all_words_content):
   """
   all are strings
   """
@@ -11,7 +11,7 @@ def screw_wordle(yellows, greys, greens):
   yellows = yellows.lower()
   greys = greys.lower()
   greens = greens.lower()
-  setofwords = set(words.words())
+  #setofwords = set(words.words())
 
   y = [''.join(i) for i in product(ascii_lowercase, repeat = 5)]
 
@@ -32,9 +32,10 @@ def screw_wordle(yellows, greys, greens):
         return False    
     if mask(word, greens) == False:
       return False
-    if word not in setofwords :
+    if (word in all_allowed_content) or (word in all_words_content) :
+      return True
+    else:
       return False
-    return True
     
 
 

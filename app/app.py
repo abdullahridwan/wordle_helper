@@ -5,6 +5,12 @@ from app.screw_wordle import screw_wordle
 
 app = Flask(__name__)
  
+all_words = open("words.txt", "r")
+all_words_content = all_words.read().split("\n")
+
+
+all_allowed = open("allowed.txt", "r")
+all_allowed_content = all_allowed.read().split("\n")
 
 @app.route('/')
 def form():
@@ -19,8 +25,8 @@ def data():
         yellows = form_data.get("Yellow Letters", "")
         greys = form_data.get("Grey Letters", "")
         greens = form_data.get("Green Letters", "*****")
-        possible_words = screw_wordle(yellows, greys, greens)
+        possible_words = screw_wordle(yellows, greys, greens, all_allowed_content, all_words_content)
         return render_template('data.html',form_data = form_data, possible_words = possible_words)
  
  
-# app.run(host='localhost', port=5000)
+app.run(host='localhost', port=5000)
