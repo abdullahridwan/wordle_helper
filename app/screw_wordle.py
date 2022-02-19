@@ -32,8 +32,10 @@ def screw_wordle(yellows, greys, greens, all_allowed_content, all_words_content)
         return False    
     if mask(word, greens) == False:
       return False
-    if (word in all_allowed_content) or (word in all_words_content) :
-      return True
+    # if (word in all_allowed_content) or (word in all_words_content) :
+    #   return True
+    if word in all_words_content:
+      return True 
     else:
       return False
     
