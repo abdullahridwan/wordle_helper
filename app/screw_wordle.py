@@ -18,7 +18,8 @@ def screw_wordle(yellows, greys, greens, all_allowed_content, all_words_content)
 
   letters = list(ascii_lowercase)
   for letter in greys:
-    letters.remove(letter)
+    if letter in letters:
+      letters.remove(letter)
   final_string = ''.join(letters)
   y = [''.join(i) for i in product(final_string, repeat = 5)]
 
