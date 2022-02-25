@@ -13,7 +13,15 @@ def screw_wordle(yellows, greys, greens, all_allowed_content, all_words_content)
   greens = greens.lower()
   #setofwords = set(words.words())
 
-  y = [''.join(i) for i in product(ascii_lowercase, repeat = 5)]
+  #y = [''.join(i) for i in product(ascii_lowercase, repeat = 5)]
+
+
+  letters = list(ascii_lowercase)
+  for letter in greys:
+    letters.remove(letter)
+  final_string = ''.join(letters)
+  y = [''.join(i) for i in product(final_string, repeat = 5)]
+
 
   # helper function that checks if a 5 letter word fits the [greens] mask
   def mask(word, greens):
@@ -24,9 +32,9 @@ def screw_wordle(yellows, greys, greens, all_allowed_content, all_words_content)
 
   #filter
   def custom_filter(word):
-    for letter in greys:
-      if letter in word:
-        return False    
+    # for letter in greys:
+    #   if letter in word:
+    #     return False    
     for letter in yellows:
       if letter not in word:
         return False    
