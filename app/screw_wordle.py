@@ -8,9 +8,9 @@ def screw_wordle(yellows, greys, greens, all_allowed_content, all_words_content)
   all are strings
   """
   #make all inputs lowercase
-  yellows = yellows.lower()
-  greys = greys.lower()
-  greens = greens.lower()
+  if len(yellows) > 0: yellows = yellows.lower()
+  if len(greys) > 0: greys = greys.lower()
+  if len(greens) > 0: greens = greens.lower()
   #setofwords = set(words.words())
 
   #y = [''.join(i) for i in product(ascii_lowercase, repeat = 5)]
